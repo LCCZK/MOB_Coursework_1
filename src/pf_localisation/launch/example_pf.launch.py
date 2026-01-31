@@ -101,8 +101,6 @@ def generate_launch_description():
     # ld.add_action(map_server)
     # ld.add_action(amcl)
     # ld.add_action(rviz2)
-
-    # time.sleep(3)
     ld.add_action(pf_localisation)
 
     return ld

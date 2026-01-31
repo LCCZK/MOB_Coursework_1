@@ -2,7 +2,7 @@
 The objective of this exercise is for you to implement, analyze, and understand the working of a particle filter localisation algorithm. You will be working in simulation, using the `Stage` environment and `RViz 2`.
 
 ## 1. Setup your workspace
-**\*The following code just a demostration, it is recommend that you fork the given repo.**
+
 
 Clone the Github repository 
 ```
@@ -14,15 +14,27 @@ Go the the root directory of the repo and update all submodules.
 cd MOB_Coursework_1
 git submodule update --init --recursive
 ```
-Install dependencies with `rosdep`. **\*run form the root directory of the repo**.
+Source youe ros2 installation and set the ROS_LOCALHOST_ONLY environment variable
 ```
-rosdep install --from-paths src
-rosdep update
+echo "source /opt/ros/jazzy/setup.sh" >> ~/.bashrc
+echo "export ROS_LOCALHOST_ONLY=1" >> ~/.bashrc
 ```
 ## 2. Working with ROS
 Build your ROS workspace with `colcon`, **\*run form the root directory of the repo**.
 ```
 colcon build --symlink-install
 ```
+Source your work space with 
+```
+source install/setup.bash 
+```
+
 ## 3. Your tasks
+You only have to make changes to `pf.py` under `src/pf_localisation/pf_localisation/pf.py`to implement the logic to initiate a particle cloud, resample the particle cloud and estimate a pose from your particle cloud.
+
 ## 4. Test your implementation with simulation
+A example launch file is provided under `src/pf_localisation/launch/example_pf.launch.py`, you can try it with:
+```
+ros2 launch pf_localisation example_pf.launch.py
+```
+You may also write your own launch script if you wish so.

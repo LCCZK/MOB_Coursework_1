@@ -30,9 +30,7 @@ class PFLocaliser(PFLocaliserBase):
         :Return:
             | (geometry_msgs.msg.PoseArray) poses of the particles
         """
-        pass
-
- 
+        raise NotImplementedError
     
     def update_particle_cloud(self, scan):
         """
@@ -43,7 +41,7 @@ class PFLocaliser(PFLocaliserBase):
             | scan (sensor_msgs.msg.LaserScan): laser scan to use for update
 
          """
-        pass
+        raise NotImplementedError
 
     def estimate_pose(self):
         """
@@ -61,4 +59,4 @@ class PFLocaliser(PFLocaliserBase):
         :Return:
             | (geometry_msgs.msg.Pose) robot's estimated pose.
          """
-        pass
+        raise NotImplementedError

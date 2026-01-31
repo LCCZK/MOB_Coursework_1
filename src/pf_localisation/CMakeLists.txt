@@ -7,7 +7,7 @@ if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD_REQUIRED ON)
 endif()
 
-add_compile_options(-fPIC -O3  -msse4 -shared -I/usr/include/python3.10)
+add_compile_options(-fPIC -O3  -msse4 -shared -I/usr/include/python3.12)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -34,7 +34,9 @@ install(DIRECTORY
         DESTINATION
         share/${PROJECT_NAME}/)
 
-ament_python_install_package(${PROJECT_NAME})
+install(DIRECTORY pf_localisation/
+  DESTINATION lib/${PROJECT_NAME}/pf_localisation
+)
 
 # Set up the libraries and header search paths for this target
 target_link_libraries(laser_trace ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
