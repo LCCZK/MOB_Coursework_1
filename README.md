@@ -6,12 +6,12 @@ The objective of this exercise is for you to implement, analyze, and understand 
 
 Clone the Github repository 
 ```
-git clone git@github.com:LCCZK/MOB_Coursework_1.git
+git clone https://github.com/LCCZK/MOB_Coursework_2.git
 ```
 
 Go the the root directory of the repo and update all submodules.
 ```
-cd MOB_Coursework_1
+cd MOB_Coursework_2
 git submodule update --init --recursive
 ```
 Source youe ros2 installation and set the ROS_LOCALHOST_ONLY environment variable
